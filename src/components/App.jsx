@@ -32,7 +32,6 @@ export class App extends Component {
 
   onSubmitSearch = query => {
     this.setState({ searchQuery: query, images: [], currentPage: 1 });
-    this.fetchImagesItem(query, 1);
   };
 
   fetchImagesItem = async (query, page) => {
@@ -68,7 +67,6 @@ export class App extends Component {
     this.setState(prev => ({
       currentPage: prev.currentPage + 1,
     }));
-    this.fetchImagesItem(this.state.searchQuery, this.state.currentPage + 1);
   };
   render() {
     const { images, isLoading, totalImages, largeImageURL } = this.state;

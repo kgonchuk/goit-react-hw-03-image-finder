@@ -4,12 +4,9 @@ import ImageGalleryItem from 'components/ImageGalleryItem/ImageGalleryItem';
 import css from './ImageGallery.module.css';
 
 const ImageGallery = ({ images, onModalClick }) => {
-  const uniqueImages = images.filter((image, index, self) => {
-    return index === self.findIndex(img => img.id === image.id);
-  });
   return (
     <ul className={css.gallery}>
-      {uniqueImages.map(image => (
+      {images.map(image => (
         <ImageGalleryItem
           key={image.id}
           item={image}
